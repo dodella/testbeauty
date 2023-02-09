@@ -1,0 +1,30 @@
+﻿<Page x:Class="User6BeautyApp.PageMain.PageSighIn"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:User6BeautyApp.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageSighIn">
+
+    <Grid>
+        <StackPanel
+            Background="#fff"
+            Width="400"
+            Height="150"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            <Button
+                Name="BtnDefault"
+                Click="BtnDefault_Click"
+                Height="70"
+                Content="Обычный режим" />
+            <Button 
+                Name="BtnAdmin"
+                Click="BtnAdmin_Click"
+                Style="{StaticResource EddButton}"
+                Content="Режим Администратора"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,74 @@
+﻿<Page x:Class="User6BeautyApp.PageMain.PageDefault"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:User6BeautyApp.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageDefault">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="364*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Работа с данными:">
+
+        </GroupBox>
+        <DataGrid
+            Name="GridServices"
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn
+                    Header="Список услуг"
+                    Width="*"
+                    >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+
+                                    <Image
+                                        Width="200"
+                                        Height="200"
+                                        Source="{Binding MainImagePath}"
+                                    />
+
+                                    <StackPanel>
+                                        <TextBlock 
+                                            Style="{StaticResource HeaderStyleCard}"
+                                            Text="{Binding Title}"/>
+                                        <TextBlock>
+                                            <Run Text="{Binding Cost}" 
+                                                 Style="{StaticResource DescriptionStyleCard}"
+                                                 />
+                                            <Run Text=" рублей за " 
+                                                 Style="{StaticResource DescriptionStyleCard}"
+                                                 />
+                                            <Run Text="{Binding DurationInSeconds}"
+                                                 Style="{StaticResource DescriptionStyleCard}"
+                                                 />
+                                        </TextBlock>
+                                        <TextBlock> 
+                                            <Run Text="* скидка" />
+                                            <Run Text="{Binding Discount}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GroupBox Header="Статистика:"
+                  Grid.Row="2">
+
+        </GroupBox>
+    </Grid>
+</Page>
